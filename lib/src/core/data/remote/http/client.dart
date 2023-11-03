@@ -104,22 +104,6 @@ class ApiClientImpl implements ApiClient {
     }
   }
 
-  // Future<T> responseType<T>(
-  //   http.Response response,
-  //   T Function(String body) fromJson,
-  // ) async {
-  //   if (response.statusCode == 200) {
-  //     final model = fromJson(response.body);
-  //     return model;
-  //   } else if (response.statusCode == 401) {
-  //     debugPrint('token jok');
-  //     throw ServerException();
-  //   } else {
-  //     debugPrint('server kata');
-  //     throw ServerException();
-  //   }
-  // }
-
   Future<T> uploadResponseType<T>(
     StreamedResponse response,
     T Function(String body) fromJson,
@@ -138,24 +122,24 @@ class ApiClientImpl implements ApiClient {
     }
   }
 
-  Future<T> downloadResponseType<T>(
-    http.Response response,
-    T Function(String body) fromJson,
-  ) async {
-    if (response.statusCode == 200) {
-      final file = File('123');
-      await file.writeAsBytes(response.bodyBytes);
-      final filePath = file.path;
-      final model = fromJson(filePath);
-      return model;
-    } else if (response.statusCode == 401) {
-      debugPrint('token jok');
-      throw ServerException();
-    } else {
-      debugPrint('server kata');
-      throw ServerException();
-    }
-  }
+  // Future<T> downloadResponseType<T>(
+  //   http.Response response,
+  //   T Function(String body) fromJson,
+  // ) async {
+  //   if (response.statusCode == 200) {
+  //     final file = File('123');
+  //     await file.writeAsBytes(response.bodyBytes);
+  //     final filePath = file.path;
+  //     final model = fromJson(filePath);
+  //     return model;
+  //   } else if (response.statusCode == 401) {
+  //     debugPrint('token jok');
+  //     throw ServerException();
+  //   } else {
+  //     debugPrint('server kata');
+  //     throw ServerException();
+  //   }
+  // }
 
   @override
   Future<T> get<T>(

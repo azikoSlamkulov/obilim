@@ -10,6 +10,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../../module/profile/domain/entities/user_entity.dart';
 import '../../../module/profile/presentation/logic/user/user_cubit.dart';
 import '../../../module/profile/presentation/logic/user_image/profile_image_cubit.dart';
+import '../../data/remote/api/base_api.dart';
 
 class NetworkImageWidget extends StatelessWidget {
   NetworkImageWidget({
@@ -31,9 +32,6 @@ class NetworkImageWidget extends StatelessWidget {
     File file = File(image.path);
     return file;
   }
-
-  String imageUrl = 'http://85.113.29.26:8080/api/v1/user/photo';
-  //Map<String, String>? headers = {'Authorization': 'Bearer $token'};
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +66,7 @@ class NetworkImageWidget extends StatelessWidget {
                     color: Colors.red,
                     image: DecorationImage(
                       image: NetworkImage(
-                        'http://85.113.29.26:8080/api/v1/user/photo/${user.userPhoto}',
+                        '${BaseAPI.userPhoto}${user.userPhoto}',
                         headers: {'Authorization': 'Bearer $token'},
                       ),
                       fit: BoxFit.cover,
@@ -87,7 +85,7 @@ class NetworkImageWidget extends StatelessWidget {
             child: InkWell(
               onTap: () async {
                 file = await getImage(ImageSource.camera);
-                context.read<ProfileImageCubit>().uploadUserImage(
+                context.read<UserCubit>().uploadPhoto(
                       token: token,
                       id: user.id!,
                       file: file!,

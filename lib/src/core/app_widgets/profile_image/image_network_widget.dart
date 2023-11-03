@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../module/profile/domain/entities/user_entity.dart';
+import '../../data/remote/api/base_api.dart';
 
 class ImageNetworkWidget extends StatelessWidget {
   ImageNetworkWidget({
@@ -38,7 +39,8 @@ class ImageNetworkWidget extends StatelessWidget {
     log('token ===>>> $token');
     return Image.network(
       //imageUrl,
-      'http://85.113.29.26:8080/api/v1/user/photo/${user.userPhoto}',
+      //'http://85.113.29.26:8080/api/v1/user/photo/${user.userPhoto}',
+      '${BaseAPI.userPhoto}${user.userPhoto}',
       headers: {'Authorization': 'Bearer $token'},
       height: 100.h,
       width: 100.h,
