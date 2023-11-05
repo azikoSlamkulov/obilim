@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:obilim/src/util/app_constants/text_styles/text_styles.dart';
+import 'package:obilim/src/config/util/app_constants/text_styles/text_styles.dart';
 
-import '../../../../util/app_widgets/bar/custom_app_bar.dart';
-import '../../../../util/app_widgets/drawer.dart';
+import '../../../../config/util/app_widgets/bar/custom_app_bar.dart';
+import '../../../../config/drawer.dart';
 
 class LessonView extends StatelessWidget {
   const LessonView({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../util/app_constants/app_constants.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
 
 class WidgetBtnFacebook extends StatelessWidget {
   final VoidCallback? onTap;

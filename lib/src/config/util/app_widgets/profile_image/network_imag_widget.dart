@@ -7,10 +7,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../module/profile/domain/entities/user_entity.dart';
-import '../../../module/profile/presentation/logic/user/user_cubit.dart';
-import '../../../module/profile/presentation/logic/user_image/profile_image_cubit.dart';
-import '../../data/remote/api/base_api.dart';
+import '../../../../module/profile/domain/entities/user_entity.dart';
+import '../../../../module/profile/presentation/logic/user/user_cubit.dart';
+import '../../../../module/profile/presentation/logic/user_image/profile_image_cubit.dart';
+import '../../../../core/data/remote/api/base_api.dart';
 
 class NetworkImageWidget extends StatelessWidget {
   NetworkImageWidget({

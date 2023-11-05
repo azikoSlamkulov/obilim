@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import '../../../../core/data/local/sharedpreferences/local_storage.dart';
-import '../../../../util/app_constants/app_constants.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
 import '../model/token_model.dart';
 
 abstract class LocalAuthData {

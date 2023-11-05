@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:obilim/src/module/auth/presentation/logic/auth/auth_bloc.dart';
-import 'package:obilim/src/util/app_constants/app_constants.dart';
+import 'package:obilim/src/config/util/app_constants/app_constants.dart';
 
-import '../../../../../locator.dart';
+import '../../../../config/locator.dart';
 import '../../../auth/presentation/views/sign_in_view.dart';
 import '../../domain/entities/user_entity.dart';
 import '../logic/user/user_cubit.dart';

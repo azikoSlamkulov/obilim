@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:obilim/src/config/theme/bloc/theme_bloc.dart';
 import 'package:obilim/src/core/data/local/sharedpreferences/local_storage.dart';
 import 'package:obilim/src/core/data/remote/http/client.dart';
 import 'package:obilim/src/module/auth/data/datasource/local_auth_data.dart';
@@ -18,8 +19,7 @@ import 'package:obilim/src/module/profile/domain/repositories/user_repo.dart';
 import 'package:obilim/src/module/profile/domain/usecases/edit_user.dart';
 import 'package:obilim/src/module/profile/domain/usecases/get_all_users.dart';
 import 'package:obilim/src/module/profile/domain/usecases/get_user.dart';
-import 'package:obilim/src/module/profile/domain/usecases/get_user_image.dart';
-import 'package:obilim/src/module/profile/domain/usecases/upload_user_image.dart';
+import 'package:obilim/src/module/profile/domain/usecases/upload_user_photo.dart';
 import 'package:obilim/src/module/profile/presentation/logic/user/user_cubit.dart';
 import 'package:obilim/src/module/profile/presentation/logic/user_image/profile_image_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -59,6 +59,8 @@ Future<void> init() async {
 
   sl.registerFactory(() => TypeToggleBtnCubit());
 
+  sl.registerFactory(() => ThemeBloc());
+
   ///Usecases
   sl.registerLazySingleton(() => GetToken(sl()));
   sl.registerLazySingleton(() => SignInWithEmail(sl()));
@@ -69,7 +71,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetAllUsers(sl()));
   sl.registerLazySingleton(() => GetUser(sl()));
   sl.registerLazySingleton(() => EditUser(sl()));
-  sl.registerLazySingleton(() => UploadUserImage(sl()));
+  sl.registerLazySingleton(() => UploadUserPhoto(sl()));
   //sl.registerLazySingleton(() => GetUserImage(sl()));
 
   ///Repositories

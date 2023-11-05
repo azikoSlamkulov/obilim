@@ -3,14 +3,11 @@ import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:obilim/src/module/auth/domain/entities/token_entity.dart';
 
-import '../../../module/profile/domain/entities/user_entity.dart';
-import '../../data/remote/api/base_api.dart';
+import '../../../../module/profile/domain/entities/user_entity.dart';
+import '../../../../core/data/remote/api/base_api.dart';
 
 class CachedNetworkImageWidget extends StatelessWidget {
   CachedNetworkImageWidget({

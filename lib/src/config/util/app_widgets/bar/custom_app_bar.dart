@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:obilim/src/util/app_constants/app_constants.dart';
+import 'package:obilim/src/config/util/app_constants/app_constants.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   //with PreferredSizeWidget

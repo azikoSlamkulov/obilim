@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../util/app_constants/app_constants.dart';
-import '../../../../util/app_widgets/bar/custom_app_bar.dart';
-import '../../../../util/app_widgets/buttons/custom_elevated_button.dart';
-import '../../../../util/app_widgets/inputs/custom_text_form_field.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
+import '../../../../config/util/app_widgets/bar/custom_app_bar.dart';
+import '../../../../config/util/app_widgets/buttons/custom_elevated_button.dart';
+import '../../../../config/util/app_widgets/inputs/custom_text_form_field.dart';
 import '../logic/auth/auth_bloc.dart';
 import '../logic/category_toggle_btn/type_toggle_btn_cubit.dart';
 import '../widgets/custom_toggle_button.dart';

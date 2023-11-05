@@ -9,8 +9,9 @@ import '../../../../core/error/error.dart';
 import '../entities/user_photo_entity.dart';
 
 abstract class UserRepo {
-  Future<Either<Failure, List<UserEntity>>> getAllUsers(
-      {required String token});
+  Future<Either<Failure, List<UserEntity>>> getAllUsers({
+    required String token,
+  });
   Future<Either<Failure, UserEntity>> getUser({required String token});
   Future<Either<Failure, UserEntity>> editUser({
     required String token,
@@ -20,7 +21,7 @@ abstract class UserRepo {
     required String phoneNumber,
     required String birthDate,
   });
-  Future<Either<Failure, UserPhotoEntity>> uploadUserImage({
+  Future<Either<Failure, UserPhotoEntity>> uploadUserPhoto({
     required String token,
     required int userID,
     required File file,

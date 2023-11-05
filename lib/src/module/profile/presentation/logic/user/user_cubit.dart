@@ -12,7 +12,7 @@ import '../../../../../core/error/error.dart';
 import '../../../../profile/domain/usecases/get_all_users.dart';
 import '../../../domain/usecases/edit_user.dart';
 import '../../../domain/usecases/get_user.dart';
-import '../../../domain/usecases/upload_user_image.dart';
+import '../../../domain/usecases/upload_user_photo.dart';
 
 part 'user_state.dart';
 
@@ -23,7 +23,7 @@ class UserCubit extends Cubit<UserState> {
   final GetAllUsers getAllUsers;
   final GetUser getUser;
   final EditUser editUser;
-  final UploadUserImage uploadUserPhoto;
+  final UploadUserPhoto uploadUserPhoto;
   UserCubit({
     required this.getAllUsers,
     required this.getUser,

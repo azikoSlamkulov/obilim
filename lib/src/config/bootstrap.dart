@@ -3,7 +3,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:obilim/locator.dart';
+import 'package:obilim/src/config/locator.dart';
+import 'package:obilim/src/config/theme/bloc/theme_bloc.dart';
 import 'package:obilim/src/module/auth/presentation/logic/auth/auth_bloc.dart';
 import 'package:obilim/src/module/auth/presentation/logic/category_toggle_btn/type_toggle_btn_cubit.dart';
 
@@ -37,6 +38,9 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
         ),
         BlocProvider<TypeToggleBtnCubit>(
           create: (context) => sl<TypeToggleBtnCubit>(),
+        ),
+        BlocProvider<ThemeBloc>(
+          create: (context) => sl<ThemeBloc>(),
         ),
       ],
       child: await builder(),

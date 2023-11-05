@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../util/app_constants/app_constants.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
 
 class CustomToggleButton extends StatelessWidget {
   const CustomToggleButton({

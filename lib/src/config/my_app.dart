@@ -6,11 +6,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:obilim/src/module/app/routes/app_router.dart';
+import 'package:obilim/src/config/routes/app_router.dart';
+import 'package:obilim/src/config/theme/bloc/theme_bloc.dart';
+import 'package:obilim/src/module/auth/presentation/logic/auth/auth_bloc.dart';
 
-import '../../core/theme/theme.dart';
-import '../../util/app_constants/app_constants.dart';
-import '../auth/presentation/logic/auth/auth_bloc.dart';
+import 'theme/theme.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
@@ -49,35 +49,18 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          //title: 'Flutter Demo',
-          theme: lightTheme,
-          darkTheme: darkTheme,
-
-          // theme: ThemeData(
-          //   // useMaterial3: true,
-          //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)
-          //       .copyWith(primary: AppColors.mainColor),
-          //   //primarySwatch: Colors.red,
-          //   //textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-
-          //   //canvasColor: Colors.transparent,
-          // ),
-          // routeInformationProvider: router.routeInformationProvider,
-          // routeInformationParser: router.routeInformationParser,
-          // routerDelegate: router.routerDelegate,
-          routerConfig: router,
+        return BlocBuilder<ThemeBloc, ThemeMode>(
+          builder: (context, state) {
+            return MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              theme: lightTheme,
+              themeMode: state,
+              darkTheme: darkTheme,
+              routerConfig: router,
+            );
+          },
         );
       },
     );
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     debugShowCheckedModeBanner: false,
-  //     home: TestView(),
-  //   );
-  // }
 }

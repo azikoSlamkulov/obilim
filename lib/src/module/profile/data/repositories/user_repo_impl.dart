@@ -93,7 +93,7 @@ class UserRepoImpl implements UserRepo {
   // }
 
   @override
-  Future<Either<Failure, UserPhotoEntity>> uploadUserImage({
+  Future<Either<Failure, UserPhotoEntity>> uploadUserPhoto({
     required String token,
     required int userID,
     required File file,

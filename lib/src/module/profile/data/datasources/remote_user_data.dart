@@ -99,11 +99,11 @@ class RemoteUserDataImpl implements RemoteUserData {
     required int userID,
     required File file,
   }) {
-    String url = BaseAPI.userPhoto;
-    final data = ({
-      'file': file,
-      'userId': userID,
-    });
+    String url = BaseAPI.uploadUserPhoto;
+    // final data = ({
+    //   'file': file,
+    //   'userId': userID,
+    // });
 
     apiClient.getToken(token: token);
     // return apiClient.post(

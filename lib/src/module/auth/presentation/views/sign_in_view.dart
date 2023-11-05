@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:obilim/src/module/auth/presentation/views/password_recovery_view.dart';
 import 'package:obilim/src/module/auth/presentation/views/sign_up_view.dart';
 
-import '../../../../util/app_constants/app_constants.dart';
-import '../../../../util/app_widgets/buttons/custom_elevated_button.dart';
-import '../../../../util/app_widgets/dialogs/custom_snackbar.dart';
-import '../../../../util/app_widgets/inputs/custom_text_form_field.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
+import '../../../../config/util/app_widgets/buttons/custom_elevated_button.dart';
+import '../../../../config/util/app_widgets/dialogs/custom_snackbar.dart';
+import '../../../../config/util/app_widgets/inputs/custom_text_form_field.dart';
 import '../logic/auth/auth_bloc.dart';
 
 class SignInView extends StatelessWidget {

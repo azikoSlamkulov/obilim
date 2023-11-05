@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../util/app_constants/app_constants.dart';
-import '../../../../util/app_widgets/bar/custom_app_bar.dart';
-import '../../../../util/app_widgets/drawer.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
+import '../../../../config/util/app_widgets/bar/custom_app_bar.dart';
+import '../../../../config/drawer.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({

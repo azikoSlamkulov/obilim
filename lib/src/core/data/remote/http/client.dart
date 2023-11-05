@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'package:path_provider/path_provider.dart';
 
-import '../../../../module/profile/data/models/user_model.dart';
-import '../../../../module/profile/data/models/user_photo_model.dart';
 import '../../../error/error.dart';
 
 abstract class ApiClient {
@@ -215,12 +212,14 @@ class ApiClientImpl implements ApiClient {
     final uri = buildUri(path, params: headerParams);
     final request = http.MultipartRequest('POST', uri);
     request.headers['Authorization'] = 'Bearer $_token';
+    log('token_3 ====>>>>  $_token');
 
     final picture = await http.MultipartFile.fromPath(
       'file',
       file!.path,
       //filename: file.path,
     );
+    log('file!.path ====>>>>  ${file.path}');
     request.files.add(picture);
     final userIDq = http.MultipartFile.fromString(
       'userId',

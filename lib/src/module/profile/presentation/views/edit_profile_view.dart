@@ -7,11 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:obilim/src/module/profile/domain/entities/user_entity.dart';
 
-import '../../../../../locator.dart';
-import '../../../../util/app_constants/app_constants.dart';
-import '../../../../util/app_widgets/bar/custom_app_bar.dart';
-import '../../../../util/app_widgets/buttons/custom_elevated_button.dart';
-import '../../../../util/app_widgets/inputs/custom_text_form_field.dart';
+import '../../../../config/locator.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
+import '../../../../config/util/app_widgets/bar/custom_app_bar.dart';
+import '../../../../config/util/app_widgets/buttons/custom_elevated_button.dart';
+import '../../../../config/util/app_widgets/inputs/custom_text_form_field.dart';
 import '../../../auth/presentation/logic/category_toggle_btn/type_toggle_btn_cubit.dart';
 import '../../../auth/presentation/widgets/custom_toggle_button.dart';
 import '../logic/user/user_cubit.dart';

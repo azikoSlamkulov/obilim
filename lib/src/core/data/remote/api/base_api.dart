@@ -12,6 +12,7 @@ class BaseAPI {
   static const String getUser = "$userPath/profile";
   static const String editUser = "$userPath/profile/";
   static const String userPhoto = "$userPath/photo/";
+  static const String uploadUserPhoto = "$userPath/photo";
 
   /// Headers
   static const Map<String, String> headers = {

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app_constants/app_constants.dart';
-
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     Key? key,

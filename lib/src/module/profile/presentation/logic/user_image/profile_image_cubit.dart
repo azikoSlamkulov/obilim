@@ -8,7 +8,7 @@ import '../../../../../core/error/error.dart';
 import '../../../domain/entities/image_entity.dart';
 import '../../../domain/entities/user_photo_entity.dart';
 import '../../../domain/usecases/get_user_image.dart';
-import '../../../domain/usecases/upload_user_image.dart';
+import '../../../domain/usecases/upload_user_photo.dart';
 
 part 'profile_image_state.dart';
 
@@ -16,7 +16,7 @@ const SERVER_FAILURE_MESSAGE = 'Server Failure';
 const CACHED_FAILURE_MESSAGE = 'Cache Failure';
 
 class ProfileImageCubit extends Cubit<ProfileImageState> {
-  final UploadUserImage uploadUserPhoto;
+  final UploadUserPhoto uploadUserPhoto;
   //final GetUserImage getUserPhoto;
   ProfileImageCubit({
     required this.uploadUserPhoto,

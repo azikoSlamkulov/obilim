@@ -9,16 +9,16 @@ import 'package:image_picker/image_picker.dart';
 import 'package:obilim/src/module/profile/domain/entities/user_entity.dart';
 import 'package:obilim/src/module/profile/presentation/logic/user_image/profile_image_cubit.dart';
 
-import '../../../../../locator.dart';
-import '../../../../core/app_widgets/profile_image/image_network_widget.dart';
-import '../../../../core/app_widgets/profile_image/network_imag_widget.dart';
-import '../../../../util/app_constants/app_constants.dart';
-import '../../../../util/app_widgets/bar/custom_app_bar.dart';
-import '../../../../util/app_widgets/drawer.dart';
+import '../../../../config/locator.dart';
+import '../../../../config/util/app_widgets/profile_image/image_network_widget.dart';
+import '../../../../config/util/app_widgets/profile_image/network_imag_widget.dart';
+import '../../../../config/util/app_constants/app_constants.dart';
+import '../../../../config/util/app_widgets/bar/custom_app_bar.dart';
+import '../../../../config/drawer.dart';
 import '../../../auth/presentation/logic/auth/auth_bloc.dart';
 import '../../../auth/presentation/views/sign_in_view.dart';
 import '../logic/user/user_cubit.dart';
-import '../../../../core/app_widgets/profile_image/cached_network_image_widget.dart';
+import '../../../../config/util/app_widgets/profile_image/cached_network_image_widget.dart';
 import 'edit_profile_view.dart';
 
 class ProfileView extends StatelessWidget {

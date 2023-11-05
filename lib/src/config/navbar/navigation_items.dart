@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../util/app_constants/app_constants.dart';
-
 List<CustomNavigationDestination> destinations = [
   const CustomNavigationDestination(
     label: 'Home',

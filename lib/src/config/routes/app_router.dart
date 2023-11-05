@@ -16,19 +16,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:obilim/src/module/app/routes/router_utils.dart';
+import 'package:obilim/src/config/routes/router_utils.dart';
+import 'package:obilim/src/module/auth/presentation/logic/auth/auth_bloc.dart';
+import 'package:obilim/src/module/auth/presentation/views/password_recovery_view.dart';
+import 'package:obilim/src/module/auth/presentation/views/sign_in_view.dart';
+import 'package:obilim/src/module/auth/presentation/views/sign_up_view.dart';
+import 'package:obilim/src/module/course/presentation/views/catalog_view.dart';
+import 'package:obilim/src/module/course/presentation/views/chapter_list_view.dart';
+import 'package:obilim/src/module/course/presentation/views/lesson_list_view.dart';
+import 'package:obilim/src/module/course/presentation/views/lesson_view.dart';
+import 'package:obilim/src/module/home/presentation/views/home_view.dart';
+import 'package:obilim/src/module/profile/presentation/views/profile_view.dart';
 
-import '../../auth/presentation/logic/auth/auth_bloc.dart';
-import '../../auth/presentation/views/password_recovery_view.dart';
-import '../../auth/presentation/views/sign_in_view.dart';
-import '../../auth/presentation/views/sign_up_view.dart';
-import '../../course/presentation/views/chapter_list_view.dart';
-import '../../course/presentation/views/catalog_view.dart';
-import '../../course/presentation/views/lesson_list_view.dart';
-import '../../course/presentation/views/lesson_view.dart';
-import '../../home/presentation/views/home_view.dart';
-import '../../profile/presentation/views/profile_view.dart';
-import '../../../util/app_constants/app_constants.dart';
+import '../util/app_constants/app_constants.dart';
 import '../navbar/navbar.dart';
 
 const _pageKey = ValueKey('_pageKey');

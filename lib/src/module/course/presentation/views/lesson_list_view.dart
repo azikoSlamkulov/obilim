@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:obilim/src/util/app_constants/app_constants.dart';
+import 'package:obilim/src/config/routes/router_utils.dart';
+import 'package:obilim/src/config/util/app_constants/app_constants.dart';
 
-import '../../../../util/app_widgets/bar/custom_app_bar.dart';
-import '../../../../util/app_widgets/drawer.dart';
-import '../../../app/routes/router_utils.dart';
+import '../../../../config/util/app_widgets/bar/custom_app_bar.dart';
+import '../../../../config/drawer.dart';
 
 class LessonListView extends StatelessWidget {
   const LessonListView({
