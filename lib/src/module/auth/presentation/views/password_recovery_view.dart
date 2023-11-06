@@ -20,6 +20,9 @@ class PasswordRecoveryView extends StatelessWidget {
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
     bool isEmail(String input) => EmailValidator.validate(input);
+
+    TextTheme textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       //backgroundColor: AppColors.bgColorMain,
       // appBar: CustomAppBar(title: '', bgColor: AppColors.bgColorMain),
@@ -38,7 +41,8 @@ class PasswordRecoveryView extends StatelessWidget {
                     Text(
                       'Восстановление пароля',
                       //style: AppTextStyles.black30Bold,
-                      style: Theme.of(context).textTheme.displayMedium,
+                      style: textTheme.displayMedium!
+                          .copyWith(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -46,7 +50,7 @@ class PasswordRecoveryView extends StatelessWidget {
                 Text(
                   'Пожалуйста, введите свой адрес электронной почты. Вы получите ссылку для создания нового пароля по электронной почте.',
                   //style: AppTextStyles.black16,
-                  style: Theme.of(context).textTheme.displaySmall,
+                  style: textTheme.displaySmall,
                 ),
 
                 /// Email

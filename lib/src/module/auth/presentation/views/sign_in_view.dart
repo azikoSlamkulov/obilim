@@ -39,10 +39,10 @@ class NestedSignInView extends StatelessWidget {
     final passwordController = TextEditingController();
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+    TextTheme textTheme = Theme.of(context).textTheme;
+
     //bool isEmail(String input) => EmailValidator.validate(input);
     return Scaffold(
-      //backgroundColor: AppColors.bgColorMain,
-      //appBar: CustomAppBar(title: '', bgColor: AppColors.bgColorMain),
       body: Padding(
         padding: REdgeInsets.symmetric(horizontal: 15, vertical: 45),
         child: SingleChildScrollView(
@@ -57,8 +57,11 @@ class NestedSignInView extends StatelessWidget {
                   children: [
                     Text(
                       'Авторизация',
-                      //style: AppTextStyles.black34Bold,
-                      style: Theme.of(context).textTheme.displayLarge,
+                      style: textTheme.displayLarge,
+                      // style:
+                      //     Theme.of(context).textTheme.displayMedium!.copyWith(
+                      //           fontWeight: FontWeight.bold,
+                      //         ),
                     ),
                   ],
                 ),
@@ -112,8 +115,8 @@ class NestedSignInView extends StatelessWidget {
                       },
                       icon: Text(
                         'Забыли пароль?',
-                        //style: AppTextStyles.black16,
-                        style: Theme.of(context).textTheme.displaySmall,
+                        style: textTheme.displaySmall,
+                        //style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       label: AppAssets.arrowRight(
                         width: 30,
@@ -160,7 +163,8 @@ class NestedSignInView extends StatelessWidget {
                   child: Text(
                     'Регистрация. ',
                     //style: AppTextStyles.blue16,
-                    style: TextStyle(fontSize: 16.sp),
+                    //style: TextStyle(fontSize: 16.sp),
+                    style: textTheme.titleMedium!.copyWith(color: Colors.blue),
                   ),
                 ),
                 // Row(

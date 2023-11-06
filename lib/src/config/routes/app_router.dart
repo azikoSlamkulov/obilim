@@ -21,10 +21,11 @@ import 'package:obilim/src/module/auth/presentation/logic/auth/auth_bloc.dart';
 import 'package:obilim/src/module/auth/presentation/views/password_recovery_view.dart';
 import 'package:obilim/src/module/auth/presentation/views/sign_in_view.dart';
 import 'package:obilim/src/module/auth/presentation/views/sign_up_view.dart';
-import 'package:obilim/src/module/course/presentation/views/catalog_view.dart';
+import 'package:obilim/src/module/course/presentation/views/categories_view.dart';
 import 'package:obilim/src/module/course/presentation/views/chapter_list_view.dart';
 import 'package:obilim/src/module/course/presentation/views/lesson_list_view.dart';
 import 'package:obilim/src/module/course/presentation/views/lesson_view.dart';
+import 'package:obilim/src/module/course/presentation/views/subcategories_view.dart';
 import 'package:obilim/src/module/home/presentation/views/home_view.dart';
 import 'package:obilim/src/module/profile/presentation/views/profile_view.dart';
 
@@ -120,61 +121,80 @@ class AppRouter {
             key: _scaffoldKey,
             currentIndex: 1,
             //title: AppPage.course.toTitle,
-            mobile: CatalogView(),
-            tablet: CatalogView(),
+            mobile: CategoriesView(),
+            tablet: CategoriesView(),
           ),
         ),
         routes: [
           GoRoute(
-            path: AppPage.chapterList.toPath,
-            name: AppPage.chapterList.toName,
+            path: AppPage.subCategoriesList.toPath,
+            name: AppPage.subCategoriesList.toName,
             builder: (context, state) => RootLayout(
               key: _scaffoldKey,
               currentIndex: 1,
               //title: AppPage.chapterList.toTitle,
-              mobile: ChapterListView(
-                courseNumber: state.pathParameters['courseNumber']!,
+              mobile: SubCategoriesView(
+                categoryId: state.pathParameters['categoryId']!,
               ),
-              tablet: ChapterListView(
-                courseNumber: state.pathParameters['courseNumber']!,
+              tablet: SubCategoriesView(
+                categoryId: state.pathParameters['categoryId']!,
               ),
             ),
             routes: [
               GoRoute(
-                path: AppPage.lessonList.toPath,
-                name: AppPage.lessonList.toName,
+                path: AppPage.chapterList.toPath,
+                name: AppPage.chapterList.toName,
                 builder: (context, state) => RootLayout(
                   key: _scaffoldKey,
                   currentIndex: 1,
-                  //title: AppPage.lessonList.toTitle,
-                  mobile: LessonListView(
+                  //title: AppPage.chapterList.toTitle,
+                  mobile: ChapterListView(
                     courseNumber: state.pathParameters['courseNumber']!,
-                    chapterNumber: state.pathParameters['chapterNumber']!,
                   ),
-                  tablet: LessonListView(
+                  tablet: ChapterListView(
                     courseNumber: state.pathParameters['courseNumber']!,
-                    chapterNumber: state.pathParameters['chapterNumber']!,
                   ),
                 ),
                 routes: [
                   GoRoute(
-                    path: AppPage.lesson.toPath,
-                    name: AppPage.lesson.toName,
+                    path: AppPage.lessonList.toPath,
+                    name: AppPage.lessonList.toName,
                     builder: (context, state) => RootLayout(
                       key: _scaffoldKey,
                       currentIndex: 1,
-                      //title: AppPage.lesson.toTitle,
-                      mobile: LessonView(
+                      //title: AppPage.lessonList.toTitle,
+                      mobile: LessonListView(
                         courseNumber: state.pathParameters['courseNumber']!,
                         chapterNumber: state.pathParameters['chapterNumber']!,
-                        lessonNumber: state.pathParameters['lessonNumber']!,
                       ),
-                      tablet: LessonView(
+                      tablet: LessonListView(
                         courseNumber: state.pathParameters['courseNumber']!,
                         chapterNumber: state.pathParameters['chapterNumber']!,
-                        lessonNumber: state.pathParameters['lessonNumber']!,
                       ),
                     ),
+                    routes: [
+                      GoRoute(
+                        path: AppPage.lesson.toPath,
+                        name: AppPage.lesson.toName,
+                        builder: (context, state) => RootLayout(
+                          key: _scaffoldKey,
+                          currentIndex: 1,
+                          //title: AppPage.lesson.toTitle,
+                          mobile: LessonView(
+                            courseNumber: state.pathParameters['courseNumber']!,
+                            chapterNumber:
+                                state.pathParameters['chapterNumber']!,
+                            lessonNumber: state.pathParameters['lessonNumber']!,
+                          ),
+                          tablet: LessonView(
+                            courseNumber: state.pathParameters['courseNumber']!,
+                            chapterNumber:
+                                state.pathParameters['chapterNumber']!,
+                            lessonNumber: state.pathParameters['lessonNumber']!,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

@@ -13,31 +13,7 @@ import 'package:obilim/src/module/auth/presentation/logic/auth/auth_bloc.dart';
 import 'theme/theme.dart';
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  /// Navigation 1.0
-  // @override
-  // Widget build(BuildContext context) {
-  //   final router = AppRouter(context.watch<AuthBloc>()).router;
-
-  //   return ScreenUtilInit(
-  //     designSize: const Size(393, 851),
-  //     minTextAdapt: true,
-  //     splitScreenMode: true,
-  //     builder: (context, child) {
-  //       return MaterialApp(
-  //         debugShowCheckedModeBanner: false,
-  //         //title: 'Flutter Demo',
-  //         theme: ThemeData(
-  //           primarySwatch: Colors.blue,
-  //           textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-  //           //canvasColor: Colors.transparent,
-  //         ),
-  //         home: RedirectView(),
-  //       );
-  //     },
-  //   );
-  // }
+  const MyApp({Key? key}) : super(key: key);
 
   /// Navigation 2.0 (GoRouter)
   @override
@@ -63,4 +39,28 @@ class MyApp extends StatelessWidget {
       },
     );
   }
+
+  /// Navigation 1.0
+  // @override
+  // Widget build(BuildContext context) {
+  //   final router = AppRouter(context.watch<AuthBloc>()).router;
+
+  //   return ScreenUtilInit(
+  //     designSize: const Size(393, 851),
+  //     minTextAdapt: true,
+  //     splitScreenMode: true,
+  //     builder: (context, child) {
+  //       return MaterialApp(
+  //         debugShowCheckedModeBanner: false,
+  //         //title: 'Flutter Demo',
+  //         theme: ThemeData(
+  //           primarySwatch: Colors.blue,
+  //           textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+  //           //canvasColor: Colors.transparent,
+  //         ),
+  //         home: RedirectView(),
+  //       );
+  //     },
+  //   );
+  // }
 }

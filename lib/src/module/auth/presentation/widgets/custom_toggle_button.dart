@@ -64,9 +64,9 @@ class CustomToggleButton extends StatelessWidget {
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius!),
-                side: isActivity
-                    ? BorderSide.none
-                    : const BorderSide(color: Color(0xFF9B9B9B)),
+                // side: isActivity
+                //     ? BorderSide.none
+                //     : const BorderSide(color: Color(0xFF9B9B9B)),
               ),
               //primary: bgColor,
               backgroundColor: isActivity

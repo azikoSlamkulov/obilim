@@ -36,25 +36,25 @@ class CustomElevatedButton extends StatelessWidget {
         vertical: paddingVertical,
       ),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(
-            horizontal: paddingHorizontal,
-            vertical: paddingVertical,
-          ),
-          // shape: RoundedRectangleBorder(
-          //   borderRadius: BorderRadius.circular(borderRadius),
-          //   // side: isBorderSide
-          //   //     ? const BorderSide(color: Color(0xFF9B9B9B))
-          //   //     : BorderSide.none,
-          // ),
-          //primary: bgColor,
-          //backgroundColor: bgColor,
-        ),
+        // style: ElevatedButton.styleFrom(
+        //   padding: EdgeInsets.symmetric(
+        //     horizontal: paddingHorizontal,
+        //     vertical: paddingVertical,
+        //   ),
+        //   // shape: RoundedRectangleBorder(
+        //   //   borderRadius: BorderRadius.circular(borderRadius),
+        //   //   // side: isBorderSide
+        //   //   //     ? const BorderSide(color: Color(0xFF9B9B9B))
+        //   //   //     : BorderSide.none,
+        //   // ),
+        //   //primary: bgColor,
+        //   //backgroundColor: bgColor,
+        // ),
         onPressed: onPressed,
         child: Text(
           text,
           //style: AppTextStyles.white18Bold,
-          //style: Theme.of(context).textTheme.labelMedium,
+          //style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
     );

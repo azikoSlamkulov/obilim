@@ -243,6 +243,7 @@ class NestedProfileView extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).hintColor,
                 ),
+            //style: Theme.of(context).textTheme.,
           ),
           Text(
             text2,

@@ -38,7 +38,7 @@ final class UserPhotoLoaded extends UserState {
   List<Object> get props => [userPhoto];
 }
 
-class UserFailure extends UserState {
+final class UserFailure extends UserState {
   final String message;
 
   const UserFailure({required this.message});

@@ -9,8 +9,9 @@ enum AppPage {
   home,
   error,
 
-  /// Catalog
+  /// Course
   course,
+  subCategoriesList,
   chapterList,
   lessonList,
   lesson,
@@ -41,6 +42,8 @@ extension AppPageExtension on AppPage {
       /// Course
       case AppPage.course:
         return "/course";
+      case AppPage.subCategoriesList:
+        return "subCategoriesList/:categoryId";
       case AppPage.chapterList:
         return "chapterList/:courseNumber";
       case AppPage.lessonList:
@@ -83,6 +86,8 @@ extension AppPageExtension on AppPage {
       /// Course
       case AppPage.course:
         return "COURSE";
+      case AppPage.subCategoriesList:
+        return "SUBCATEGORIESLIST";
       case AppPage.chapterList:
         return "CHAPTERLIST";
       case AppPage.lessonList:
@@ -125,6 +130,8 @@ extension AppPageExtension on AppPage {
       /// Course
       case AppPage.course:
         return "Course View";
+      case AppPage.subCategoriesList:
+        return "SubCategoriesList View";
       case AppPage.chapterList:
         return "ChapterList View";
       case AppPage.lessonList:

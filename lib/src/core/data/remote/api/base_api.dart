@@ -14,6 +14,11 @@ class BaseAPI {
   static const String userPhoto = "$userPath/photo/";
   static const String uploadUserPhoto = "$userPath/photo";
 
+  /// Category
+  static const String categoryList = "$api/category";
+  static const String subCategoryList = "$api/subCategory/category/";
+  static const String categoryImageUrl = "$api/category/image/";
+
   /// Headers
   static const Map<String, String> headers = {
     "Content-Type": "application/json; charset=UTF-8"

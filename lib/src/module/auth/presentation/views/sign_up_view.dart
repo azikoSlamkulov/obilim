@@ -33,6 +33,8 @@ class SignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     String typeChoice = '';
     bool isEmail(String input) => EmailValidator.validate(input);
+    TextTheme textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       //backgroundColor: AppColors.bgColorMain,
       //appBar: CustomAppBar(title: '', bgColor: AppColors.bgColorMain),
@@ -52,7 +54,7 @@ class SignUpView extends StatelessWidget {
                     Text(
                       'Регистрация',
                       //style: AppTextStyles.black34Bold,
-                      style: Theme.of(context).textTheme.displayLarge,
+                      style: textTheme.displayLarge,
                     ),
                   ],
                 ),

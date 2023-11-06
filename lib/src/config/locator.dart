@@ -13,6 +13,12 @@ import 'package:obilim/src/module/auth/domain/usecases/sign_out.dart';
 import 'package:obilim/src/module/auth/domain/usecases/sign_up.dart';
 import 'package:obilim/src/module/auth/presentation/logic/auth/auth_bloc.dart';
 import 'package:obilim/src/module/auth/presentation/logic/category_toggle_btn/type_toggle_btn_cubit.dart';
+import 'package:obilim/src/module/course/data/datasources/remote_categories_data.dart';
+import 'package:obilim/src/module/course/data/repositories/categories_repo_impl.dart';
+import 'package:obilim/src/module/course/domain/repositories/categories_repo.dart';
+import 'package:obilim/src/module/course/domain/usecases/get_all_categories.dart';
+import 'package:obilim/src/module/course/domain/usecases/get_all_subcategories.dart';
+import 'package:obilim/src/module/course/presentation/logic/categories/categories_cubit.dart';
 import 'package:obilim/src/module/profile/data/datasources/remote_user_data.dart';
 import 'package:obilim/src/module/profile/data/repositories/user_repo_impl.dart';
 import 'package:obilim/src/module/profile/domain/repositories/user_repo.dart';
@@ -57,6 +63,13 @@ Future<void> init() async {
     ),
   );
 
+  sl.registerFactory(
+    () => CategoriesCubit(
+      getAllCategories: sl(),
+      getAllSubCategories: sl(),
+    ),
+  );
+
   sl.registerFactory(() => TypeToggleBtnCubit());
 
   sl.registerFactory(() => ThemeBloc());
@@ -72,7 +85,8 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetUser(sl()));
   sl.registerLazySingleton(() => EditUser(sl()));
   sl.registerLazySingleton(() => UploadUserPhoto(sl()));
-  //sl.registerLazySingleton(() => GetUserImage(sl()));
+  sl.registerLazySingleton(() => GetAllCategories(sl()));
+  sl.registerLazySingleton(() => GetAllSubCategories(sl()));
 
   ///Repositories
   sl.registerLazySingleton<AuthRepo>(
@@ -89,6 +103,13 @@ Future<void> init() async {
     ),
   );
 
+  sl.registerLazySingleton<CategoriesRepo>(
+    () => CategoriesRepoImpl(
+      //localAuth: sl(),
+      remoteCategories: sl(),
+    ),
+  );
+
   ///datasource
   sl.registerLazySingleton<RemoteAuthData>(
     () => RemoteAuthDataImpl(apiClient: sl()),
@@ -100,6 +121,10 @@ Future<void> init() async {
 
   sl.registerLazySingleton<RemoteUserData>(
     () => RemoteUserDataImpl(apiClient: sl()),
+  );
+
+  sl.registerLazySingleton<RemoteCategoriesData>(
+    () => RemoteCategoriesDataImpl(apiClient: sl()),
   );
 
   ///Core
